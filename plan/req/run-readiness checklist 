@@ -1,0 +1,204 @@
+I’m checking the current repo state and the files you changed so the plan covers the actual code, test surface, docs structure, and anything that still blocks the repo from running.
+
+Checked , no problems found
+
+Read [](file:///Users/lucy/program/realJob/isThisReal)
+
+Read memory [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/plan.md)
+
+I’ve confirmed the repo is structurally healthy and diagnostics are clean. Next I’m reading the current backend and web entry points so the plan for tests, docs, and run-readiness is tied to what exists today rather than the older draft.
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/README.md)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/pyproject.toml)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/main.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/web/package.json)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/web/app/page.tsx)
+
+The repo already has a backend run path and a minimal web app, so the plan now needs to focus on missing verification layers, missing docs structure, and release messaging. I’m using two quick discovery passes to tighten those gaps before I write the updated plan.
+
+Backend test and run readiness
+
+Web docs and launch copy
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/pyproject.toml)
+
+Read memory
+
+Read memory
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/README.md)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/pyproject.toml)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/web/package.json)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal)
+
+Read memory [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/repo/project.md)
+
+Read memory [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/plan.md)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/.env.example)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/main.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/settings.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/routes)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/main.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/database.py#1-1), lines 1 to 100
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/settings.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/routes/analyze.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/analysis_pipeline.py#1-1), lines 1 to 50
+
+Searched for regex `def |class |async def` (`**/backend/core/analysis_pipeline.py`), 8 results
+
+Searched for regex `class|def` (`**/backend/tests/*.py`), 9 results
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/analysis_pipeline.py#1-1), lines 1 to 50
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/worker/x_bot.py#1-1), lines 1 to 50
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/routes/analyze.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/web/app/page.tsx)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/database.py#1-1), lines 1 to 30
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/worker/x_bot.py#1-1), lines 1 to 15
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/repository.py#1-1), lines 1 to 100
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/tests/test_analysis_pipeline.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/tests/test_rules_engine.py)
+
+Searched for text `ensure_database` (`**/backend/api/dependencies.py`), 1 result
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/plan)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/plan/req/Build%20a%20shared%20tweet-analysis)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/dependencies.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/schemas.py#1-1), lines 1 to 60
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/migrations)
+
+Searched for text `class|def` (`**/backend/core/llm.py`), 8 results
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/llm.py#1-1), lines 1 to 50
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/tests/test_user_credit.py#1-1), lines 1 to 50
+
+Searched for regex `import|from` (`**/backend/tests/test_analysis_pipeline.py`), 6 results
+
+Searched for regex `CREATE TABLE.*audit_events` (`**/backend/db/database.py`), 1 result
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/database.py#50-50), lines 50 to 143
+
+Searched for regex `import|from` (`**/backend/core/analysis_pipeline.py`), 20 results
+
+Searched for regex `^(class|async def|def) (analyze_tweet|extract_claims|extract_signals|evaluate_rules|compose_rule_score)` (`**/backend/core/*.py`), 5 results
+
+Searched for text `@router` (`**/backend/api/routes/reviews.py`), 1 result
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/api/routes/reviews.py)
+
+Searched for regex `def test_|async def test_` (`**/backend/tests/*.py`), 6 results
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/normalizer.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/signal_extractor.py#1-1), lines 1 to 60
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/claim_extractor.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/rules_engine.py#1-1), lines 1 to 60
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/user_credit.py#1-1), lines 1 to 60
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/repository.py#100-100), lines 100 to 100
+
+Searched for regex `setUp|tearDown|mock|patch` (`**/backend/tests/*.py`), no results
+
+Searched for text `def` (`**/backend/db/repository.py`), 6 results
+
+Searched for text `class|def` (`**/backend/core/llm.py`), 8 results
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/db/repository.py#1-1), lines 1 to 150
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/README.md)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/tests)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/prompts)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/core/prompts/tweet_judge_v1.md)
+
+Searched for text `class|@dataclass` (`**/backend/core/schemas.py`), 20 results
+
+Searched for text `AnalysisResult|LLMJudgment` (`**/backend/core/analysis_pipeline.py`), 8 results
+
+Created memory file [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/repo-inspection.md)
+
+There’s one ambiguity that changes the output shape: “copy write” could mean launch copy for an X post, or it could mean a copyright/license notice for the repo. I’m asking that directly, plus whether you want the run-readiness plan limited to local development or expanded to deployment.
+
+Analyzing your answers...
+
+That resolves the remaining ambiguity: you want X/Twitter launch copy, not legal notice, and you want the plan to cover both local runnability and a deployment checklist. I’m doing one last narrow read of config and test entry points so the plan references the exact files that need docs and verification work.
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/settings.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/tests/test_analysis_pipeline.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/backend/worker/x_bot.py)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/web/lib/api.ts)
+
+Read [](file:///Users/lucy/program/realJob/isThisReal/web/app/layout.tsx)
+
+I’ve got enough context to collapse this into a concrete execution plan focused on tests, a docs folder, run-readiness, and the X launch copy deliverable. I’m updating the session plan now so it reflects the current repo instead of the earlier product-only draft.
+
+Deleted memory [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/plan.md)
+
+Created memory file [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/plan.md)
+
+**Plan**
+
+I turned your request into a concrete execution plan focused on four things: stronger tests, a real docs folder, launch copy for X, and a run-readiness checklist so the repo is usable by someone other than the author.
+
+1. Lock the run path first. Use README.md, pyproject.toml, settings.py, main.py, package.json, and api.ts as the source of truth, then document one canonical backend startup path, one canonical frontend startup path, required env vars, the backend/frontend URL contract, and a deployment checklist separate from local setup.
+2. Create a docs folder at the repo root. It should hold dedicated guides for setup, testing, architecture, API behavior, environment variables, X bot behavior, and deployment. The current README.md is fine as a short entry point, but it is not enough for setup, troubleshooting, and launch.
+3. Expand tests from the current unit baseline into a full verification plan. The current baseline is in test_analysis_pipeline.py, test_rules_engine.py, and test_user_credit.py. Add API tests for analyze, history, detail, review, and health; database round-trip tests around database.py and repository.py; and bot tests around x_bot.py.
+4. Make “repo can run” measurable. Require a local smoke test sequence: backend starts, health responds, analyze works, history returns data, frontend loads, and website-to-backend calls succeed. Then add a deployment smoke checklist covering CORS, env vars, persistent database location, and bot credential validation.
+5. Keep public messaging honest. The copy should describe the project as a tweet credibility signal system, not a final fact-checker, which matches the behavior in analysis_pipeline.py and the current website flow in page.tsx.
+
+**Current State**
+
+The repo already has a working backend path and clean editor diagnostics. The main gap in “this repo can run end to end” is frontend verification: package.json defines the app, but the environment I checked did not have Node or npm available, so the plan explicitly includes documenting prerequisites and adding a frontend build/start verification step before claiming the full repo is runnable.
+
+The most important docs anchors are README.md, settings.py, main.py, database.py, x_bot.py, package.json, and api.ts. Those files are where the setup, env, API, DB, bot, and frontend behavior are currently defined.
+
+**X Copy**
+
+Option 1: Built a new project called Is This Real. Paste a tweet or mention the bot and it returns a credibility signal, confidence score, and reasoning trail. It combines deterministic rules with LLM judgment and keeps review history so the system can improve over time.
+
+Option 2: Working on an open tweet credibility checker: website plus X bot, hybrid rules plus LLM analysis, and an audit trail instead of black-box answers. The goal is not to declare absolute truth, but to flag likely true, suspicious, or unclear posts with explainable signals.
+
+Option 3: Shipping the first version of Is This Real. It analyzes tweets through a shared backend, shows why a post looks suspicious or unclear, and keeps reviewer history for better future judgments. Still early, but the repo is designed to be inspectable instead of magic.
+
+If you want, the next pass should be:
+1. Turn this plan into the actual docs folder and documentation files.
+2. Add the missing API, DB, and bot tests.
+3. Finish the run-readiness work so backend and web can both be started and verified locally.

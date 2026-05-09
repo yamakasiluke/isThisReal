@@ -1,0 +1,47 @@
+Your last answer narrows the product shape to two interfaces: a website and an X/Twitter-facing bot. I’m doing one more focused discovery pass on X integration constraints and then I’ll write the plan with explicit assumptions where you haven’t fixed a choice yet.
+
+X bot integration discovery
+
+Read [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/chat-session-resources/1054be3d-270e-4369-8e09-cb0022cb3b45/call_hdYv0ZBtfdMEcpgcFvCBCfgV__vscode-1778311652332/content.txt#261-261), lines 261 to 520
+
+Read memory
+
+Read memory [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/tweet-bot-architecture.md)
+
+I have enough to lock the design. I’m storing a concrete execution plan in session memory now, then I’ll show you the scannable version with the assumptions I fixed for the MVP.
+
+Read memory
+
+There’s already a session note related to tweet-bot architecture, so I’m checking it before I write the consolidated plan to avoid duplicating or contradicting prior notes.
+
+Read memory [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/tweet-bot-architecture.md)
+
+I’ve fixed the MVP assumptions so the plan can move forward without stalling on open product questions. The plan uses a shared analysis service, a public website, and a mention-triggered X bot, with user credit affecting confidence only in borderline cases.
+
+Created memory file [](file:///Users/lucy/Library/Application%20Support/Code/User/workspaceStorage/6ea7f9f8265d83c7dbf8b6e107e283f4/GitHub.copilot-chat/memory-tool/memories/MTA1NGJlM2QtMjcwZS00MzY5LThlMDktY2IwMDIyY2IzYjQ1/plan.md)
+
+**Plan**
+Build a shared tweet-analysis backend that powers both a website and an X/Twitter bot. For the MVP, I recommend treating this as a credibility system, not a final fact-checker: each result should be Likely true, Suspicious, or Unclear, with confidence, short reasoning, and an audit trail. I fixed the open choices with these assumptions so the plan is executable now: public website first, mention-triggered X bot second, neutral starting user credit, and a Python backend around the LLM workflow.
+
+1. Bootstrap a shared backend that accepts tweet text, tweet URLs, or fetched X tweet data and returns one structured analysis result used by both the website and the bot.
+2. Implement a fixed agent pipeline: normalize input, extract claims and metadata signals, run deterministic rules, call the LLM with structured output, then merge both into one final verdict and confidence score.
+3. Store everything needed for future judgment: tweet analyses, extracted claims, rule versions, model/prompt versions, human reviews, audit events, and user-credit history.
+4. Add versioned rules with draft, active, and deprecated states so you can improve the system over time without losing traceability.
+5. Build user credit as a bounded confidence modifier: every reviewer starts neutral, credit changes only after validated outcomes, and credit can strengthen or weaken low-confidence cases but cannot flip strong decisions by itself.
+6. Build the website with an analyze page, result page, history page, and an internal review/admin page for rule updates and manual overrides.
+7. Build the X bot as a thin adapter over the same backend: it should respond only to mentions or explicit requests, fetch the target tweet, run the shared analysis, and reply with a short verdict plus a website link for the full result.
+8. Launch in phases: website first, then a limited bot beta, then wider rollout after you understand X rate limits, moderation risk, and false-positive behavior.
+
+**Key Decisions**
+- Recommended stack: Python with FastAPI for the backend and bot orchestration, SQLite locally, PostgreSQL in production, and a separate website frontend.
+- Recommended verdict model: Likely true / Suspicious / Unclear instead of a binary real/fake label.
+- Recommended bot behavior: mention-based replies only. Unsolicited replies are a suspension risk and a poor MVP choice.
+- Recommended fallback: if X write access is restricted or too expensive, keep the website as the primary product and let the bot route users there.
+
+**Verification**
+1. Create a labeled set of at least 200 tweets and measure precision, recall, false positives, and false negatives before opening the bot broadly.
+2. Add tests for rule scoring, LLM schema validation, user-credit updates, and duplicate-analysis caching.
+3. Prove the same tweet produces the same stored analysis whether it comes from the website or the X bot.
+4. Manually review low-confidence cases each week and tune thresholds before giving more weight to user credit.
+
+I saved the full execution plan in session memory and can revise it if you want a different stack, stricter fact-checking, or a website-first rollout with no X bot in phase one.
